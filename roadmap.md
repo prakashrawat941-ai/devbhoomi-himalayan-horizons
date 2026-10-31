@@ -1,0 +1,11 @@
+# Roadmap
+- [x] Part 1 audit
+- [x] Homepage redesign (no search bar, two action cards, highlights, new palette)
+- [ ] Test existing flows with real accounts (sign-in, saved plans, enquiries, cab requests, homestay approval)
+- [ ] Homepage content editable from admin
+- [ ] Trip planner v2 with Google Maps (location, route report, weather, full budget, save/download/share)
+- [ ] Place detail pages; workation facts (host-provided vs verified)
+- [ ] Rides: drivers/vehicles, publishing on any route, matching, seat limits, booking lifecycle
+- [ ] Homestay availability + request-to-book
+- [ ] Payments: direct first; built-in online payments (blocked: needs Pro plan)
+- [ ] Admin expansion, audit log, security test pass

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRight, Mountain, Home as HomeIcon, Laptop, Car } from "lucide-react";
+import { ArrowRight, Mountain, Home as HomeIcon, Laptop, Car, Compass, Sparkles, UtensilsCrossed } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import aipan from "@/assets/aipan.jpg";
 import homestay from "@/assets/homestay.jpg";
@@ -20,41 +20,61 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const QUICK = [
-  { to: "/villages", label: "Villages", icon: Mountain },
-  { to: "/homestays", label: "Homestays", icon: HomeIcon },
-  { to: "/workation", label: "Workation", icon: Laptop },
-  { to: "/cab", label: "Cab", icon: Car },
+const HIGHLIGHTS = [
+  { to: "/villages", label: "Explore Villages", note: "Quiet Kumaon hamlets", icon: Mountain },
+  { to: "/homestays", label: "Village Homestays", note: "Stay with families", icon: HomeIcon },
+  { to: "/workation", label: "Mountain Workations", note: "Work above the clouds", icon: Laptop },
+  { to: "/culture", label: "Local Culture", note: "Festivals, faith, art", icon: Sparkles },
+  { to: "/villages", label: "Hidden Places", note: "Off the usual trail", icon: Compass },
+  { to: "/culture", label: "Food & Experiences", note: "Pahadi kitchens, crafts", icon: UtensilsCrossed },
 ] as const;
 
 function Index() {
   const { data: villages } = useQuery(villagesQuery);
   return (
     <>
-      <section className="relative -mt-14 h-[92svh] min-h-[560px] overflow-hidden">
+      <section className="relative -mt-14 h-[78svh] min-h-[520px] overflow-hidden">
         <img src={hero} alt="Stone village beneath Himalayan peaks at dawn" width={1088} height={1600} className="absolute inset-0 size-full object-cover" />
         <div className="bg-dusk absolute inset-0" />
-        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-5 pb-12 text-snow">
+        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-5 pb-20 text-snow">
           <p className="fade-up text-xs font-bold uppercase tracking-[0.3em] text-accent">Devbhoomi · Uttarakhand</p>
           <h1 className="fade-up mt-3 text-5xl font-semibold leading-[1.02] sm:text-7xl">Live a little<br /><em className="font-normal">deeper.</em></h1>
-          <p className="fade-up mt-4 max-w-md text-snow/85">Hidden Kumaon villages, family homestays and festivals that still belong to the people who keep them.</p>
-          <div className="fade-up mt-6 flex flex-wrap gap-3">
-            <Button asChild variant="hero" size="lg"><Link to="/trip-planner">Plan my trip <ArrowRight /></Link></Button>
-            <Button asChild variant="glass" size="lg"><Link to="/villages">Explore villages</Link></Button>
-          </div>
+          <p className="fade-up mt-4 max-w-md text-snow/85">Hidden villages, family homestays and mountain life — experienced, not just visited.</p>
         </div>
       </section>
 
-      <Container className="-mt-6 relative z-10">
-        <div className="grid grid-cols-4 gap-2 rounded-3xl bg-card p-3 shadow-lift">
-          {QUICK.map(({ to, label, icon: Icon }) => (
-            <Link key={to} to={to} className="flex flex-col items-center gap-2 rounded-2xl py-3 text-xs font-semibold hover:bg-secondary">
-              <span className="grid size-11 place-items-center rounded-full bg-secondary text-primary"><Icon className="size-5" /></span>
-              {label}
+      <Container className="relative z-10 -mt-12 grid gap-3 sm:grid-cols-2">
+        <Link to="/trip-planner" className="group flex items-center gap-4 rounded-3xl bg-primary p-5 text-primary-foreground shadow-lift">
+          <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground"><Compass className="size-6" /></span>
+          <span className="flex-1">
+            <span className="block font-display text-xl font-semibold">Explore & Plan</span>
+            <span className="block text-sm text-primary-foreground/80">Build your itinerary and budget</span>
+          </span>
+          <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
+        </Link>
+        <Link to="/cab" className="group flex items-center gap-4 rounded-3xl bg-card p-5 shadow-lift">
+          <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-ochre text-ochre-foreground"><Car className="size-6" /></span>
+          <span className="flex-1">
+            <span className="block font-display text-xl font-semibold">Instant Book Cab</span>
+            <span className="block text-sm text-muted-foreground">Request a ride into the hills</span>
+          </span>
+          <ArrowRight className="size-5 text-ochre transition-transform group-hover:translate-x-1" />
+        </Link>
+      </Container>
+
+      <Container className="mt-12">
+        <h2 className="text-2xl font-semibold sm:text-3xl">Discover the mountains</h2>
+        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {HIGHLIGHTS.map(({ to, label, note, icon: Icon }) => (
+            <Link key={label} to={to} className="rounded-3xl border border-border bg-card p-4 shadow-soft transition-transform hover:-translate-y-0.5">
+              <Icon className="size-5 text-ochre" />
+              <h3 className="mt-3 text-base leading-tight">{label}</h3>
+              <p className="mt-1 text-xs text-muted-foreground">{note}</p>
             </Link>
           ))}
         </div>
       </Container>
+
 
       <Container className="mt-12">
         <div className="flex items-end justify-between">

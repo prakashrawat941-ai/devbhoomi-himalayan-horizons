@@ -10,33 +10,276 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AipanArtRouteImport } from './routes/aipan-art'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CabRouteImport } from './routes/cab'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CultureRouteImport } from './routes/culture'
+import { Route as DanaHoliRouteImport } from './routes/dana-holi'
+import { Route as GoljuDevtaRouteImport } from './routes/golju-devta'
+import { Route as HoliTraditionsRouteImport } from './routes/holi-traditions'
+import { Route as HomestaysRouteImport } from './routes/homestays'
+import { Route as NandaDeviRajJatRouteImport } from './routes/nanda-devi-raj-jat'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as TripPlannerRouteImport } from './routes/trip-planner'
+import { Route as VillagesRouteImport } from './routes/villages'
+import { Route as WorkationRouteImport } from './routes/workation'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AipanArtRoute = AipanArtRouteImport.update({
+  id: '/aipan-art',
+  path: '/aipan-art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CabRoute = CabRouteImport.update({
+  id: '/cab',
+  path: '/cab',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CultureRoute = CultureRouteImport.update({
+  id: '/culture',
+  path: '/culture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DanaHoliRoute = DanaHoliRouteImport.update({
+  id: '/dana-holi',
+  path: '/dana-holi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoljuDevtaRoute = GoljuDevtaRouteImport.update({
+  id: '/golju-devta',
+  path: '/golju-devta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoliTraditionsRoute = HoliTraditionsRouteImport.update({
+  id: '/holi-traditions',
+  path: '/holi-traditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomestaysRoute = HomestaysRouteImport.update({
+  id: '/homestays',
+  path: '/homestays',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NandaDeviRajJatRoute = NandaDeviRajJatRouteImport.update({
+  id: '/nanda-devi-raj-jat',
+  path: '/nanda-devi-raj-jat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TripPlannerRoute = TripPlannerRouteImport.update({
+  id: '/trip-planner',
+  path: '/trip-planner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VillagesRoute = VillagesRouteImport.update({
+  id: '/villages',
+  path: '/villages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkationRoute = WorkationRouteImport.update({
+  id: '/workation',
+  path: '/workation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aipan-art': typeof AipanArtRoute
+  '/auth': typeof AuthRoute
+  '/cab': typeof CabRoute
+  '/contact': typeof ContactRoute
+  '/culture': typeof CultureRoute
+  '/dana-holi': typeof DanaHoliRoute
+  '/golju-devta': typeof GoljuDevtaRoute
+  '/holi-traditions': typeof HoliTraditionsRoute
+  '/homestays': typeof HomestaysRoute
+  '/nanda-devi-raj-jat': typeof NandaDeviRajJatRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/trip-planner': typeof TripPlannerRoute
+  '/villages': typeof VillagesRoute
+  '/workation': typeof WorkationRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/profile': typeof AuthenticatedProfileRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aipan-art': typeof AipanArtRoute
+  '/auth': typeof AuthRoute
+  '/cab': typeof CabRoute
+  '/contact': typeof ContactRoute
+  '/culture': typeof CultureRoute
+  '/dana-holi': typeof DanaHoliRoute
+  '/golju-devta': typeof GoljuDevtaRoute
+  '/holi-traditions': typeof HoliTraditionsRoute
+  '/homestays': typeof HomestaysRoute
+  '/nanda-devi-raj-jat': typeof NandaDeviRajJatRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/trip-planner': typeof TripPlannerRoute
+  '/villages': typeof VillagesRoute
+  '/workation': typeof WorkationRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/profile': typeof AuthenticatedProfileRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/aipan-art': typeof AipanArtRoute
+  '/auth': typeof AuthRoute
+  '/cab': typeof CabRoute
+  '/contact': typeof ContactRoute
+  '/culture': typeof CultureRoute
+  '/dana-holi': typeof DanaHoliRoute
+  '/golju-devta': typeof GoljuDevtaRoute
+  '/holi-traditions': typeof HoliTraditionsRoute
+  '/homestays': typeof HomestaysRoute
+  '/nanda-devi-raj-jat': typeof NandaDeviRajJatRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/trip-planner': typeof TripPlannerRoute
+  '/villages': typeof VillagesRoute
+  '/workation': typeof WorkationRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
+  '/_authenticated/profile': typeof AuthenticatedProfileRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/aipan-art'
+    | '/auth'
+    | '/cab'
+    | '/contact'
+    | '/culture'
+    | '/dana-holi'
+    | '/golju-devta'
+    | '/holi-traditions'
+    | '/homestays'
+    | '/nanda-devi-raj-jat'
+    | '/register'
+    | '/reset-password'
+    | '/trip-planner'
+    | '/villages'
+    | '/workation'
+    | '/admin'
+    | '/dashboard'
+    | '/profile'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/aipan-art'
+    | '/auth'
+    | '/cab'
+    | '/contact'
+    | '/culture'
+    | '/dana-holi'
+    | '/golju-devta'
+    | '/holi-traditions'
+    | '/homestays'
+    | '/nanda-devi-raj-jat'
+    | '/register'
+    | '/reset-password'
+    | '/trip-planner'
+    | '/villages'
+    | '/workation'
+    | '/admin'
+    | '/dashboard'
+    | '/profile'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/aipan-art'
+    | '/auth'
+    | '/cab'
+    | '/contact'
+    | '/culture'
+    | '/dana-holi'
+    | '/golju-devta'
+    | '/holi-traditions'
+    | '/homestays'
+    | '/nanda-devi-raj-jat'
+    | '/register'
+    | '/reset-password'
+    | '/trip-planner'
+    | '/villages'
+    | '/workation'
+    | '/_authenticated/admin'
+    | '/_authenticated/dashboard'
+    | '/_authenticated/profile'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AipanArtRoute: typeof AipanArtRoute
+  AuthRoute: typeof AuthRoute
+  CabRoute: typeof CabRoute
+  ContactRoute: typeof ContactRoute
+  CultureRoute: typeof CultureRoute
+  DanaHoliRoute: typeof DanaHoliRoute
+  GoljuDevtaRoute: typeof GoljuDevtaRoute
+  HoliTraditionsRoute: typeof HoliTraditionsRoute
+  HomestaysRoute: typeof HomestaysRoute
+  NandaDeviRajJatRoute: typeof NandaDeviRajJatRoute
+  RegisterRoute: typeof RegisterRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  TripPlannerRoute: typeof TripPlannerRoute
+  VillagesRoute: typeof VillagesRoute
+  WorkationRoute: typeof WorkationRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +291,175 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aipan-art': {
+      id: '/aipan-art'
+      path: '/aipan-art'
+      fullPath: '/aipan-art'
+      preLoaderRoute: typeof AipanArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cab': {
+      id: '/cab'
+      path: '/cab'
+      fullPath: '/cab'
+      preLoaderRoute: typeof CabRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/culture': {
+      id: '/culture'
+      path: '/culture'
+      fullPath: '/culture'
+      preLoaderRoute: typeof CultureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dana-holi': {
+      id: '/dana-holi'
+      path: '/dana-holi'
+      fullPath: '/dana-holi'
+      preLoaderRoute: typeof DanaHoliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/golju-devta': {
+      id: '/golju-devta'
+      path: '/golju-devta'
+      fullPath: '/golju-devta'
+      preLoaderRoute: typeof GoljuDevtaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/holi-traditions': {
+      id: '/holi-traditions'
+      path: '/holi-traditions'
+      fullPath: '/holi-traditions'
+      preLoaderRoute: typeof HoliTraditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/homestays': {
+      id: '/homestays'
+      path: '/homestays'
+      fullPath: '/homestays'
+      preLoaderRoute: typeof HomestaysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nanda-devi-raj-jat': {
+      id: '/nanda-devi-raj-jat'
+      path: '/nanda-devi-raj-jat'
+      fullPath: '/nanda-devi-raj-jat'
+      preLoaderRoute: typeof NandaDeviRajJatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trip-planner': {
+      id: '/trip-planner'
+      path: '/trip-planner'
+      fullPath: '/trip-planner'
+      preLoaderRoute: typeof TripPlannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/villages': {
+      id: '/villages'
+      path: '/villages'
+      fullPath: '/villages'
+      preLoaderRoute: typeof VillagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/workation': {
+      id: '/workation'
+      path: '/workation'
+      fullPath: '/workation'
+      preLoaderRoute: typeof WorkationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/profile': {
+      id: '/_authenticated/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof AuthenticatedProfileRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+  AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
+  AuthenticatedProfileRoute: typeof AuthenticatedProfileRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+  AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
+  AuthenticatedProfileRoute: AuthenticatedProfileRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AipanArtRoute: AipanArtRoute,
+  AuthRoute: AuthRoute,
+  CabRoute: CabRoute,
+  ContactRoute: ContactRoute,
+  CultureRoute: CultureRoute,
+  DanaHoliRoute: DanaHoliRoute,
+  GoljuDevtaRoute: GoljuDevtaRoute,
+  HoliTraditionsRoute: HoliTraditionsRoute,
+  HomestaysRoute: HomestaysRoute,
+  NandaDeviRajJatRoute: NandaDeviRajJatRoute,
+  RegisterRoute: RegisterRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  TripPlannerRoute: TripPlannerRoute,
+  VillagesRoute: VillagesRoute,
+  WorkationRoute: WorkationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { cultureListQuery } from "@/lib/data";
-import { PageHero, Container } from "@/components/AppShell";
+import { Container } from "@/components/AppShell";
 import { CultureArticle } from "@/components/CultureArticle";
 
 export const Route = createFileRoute("/culture")({
@@ -44,4 +44,3 @@ function Culture() {
     </>
   );
 }
-export { PageHero };

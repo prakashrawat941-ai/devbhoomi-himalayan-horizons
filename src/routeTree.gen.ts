@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AipanArtRouteImport } from './routes/aipan-art'
+import { Route as CultureRouteImport } from './routes/culture'
+import { Route as DanaHoliRouteImport } from './routes/dana-holi'
+import { Route as GoljuDevtaRouteImport } from './routes/golju-devta'
+import { Route as HoliTraditionsRouteImport } from './routes/holi-traditions'
+import { Route as HomestaysRouteImport } from './routes/homestays'
+import { Route as NandaDeviRajJatRouteImport } from './routes/nanda-devi-raj-jat'
+import { Route as VillagesRouteImport } from './routes/villages'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AipanArtRoute = AipanArtRouteImport.update({
+  id: '/aipan-art',
+  path: '/aipan-art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CultureRoute = CultureRouteImport.update({
+  id: '/culture',
+  path: '/culture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DanaHoliRoute = DanaHoliRouteImport.update({
+  id: '/dana-holi',
+  path: '/dana-holi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoljuDevtaRoute = GoljuDevtaRouteImport.update({
+  id: '/golju-devta',
+  path: '/golju-devta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoliTraditionsRoute = HoliTraditionsRouteImport.update({
+  id: '/holi-traditions',
+  path: '/holi-traditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomestaysRoute = HomestaysRouteImport.update({
+  id: '/homestays',
+  path: '/homestays',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NandaDeviRajJatRoute = NandaDeviRajJatRouteImport.update({
+  id: '/nanda-devi-raj-jat',
+  path: '/nanda-devi-raj-jat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VillagesRoute = VillagesRouteImport.update({
+  id: '/villages',
+  path: '/villages',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aipan-art': typeof AipanArtRoute
+  '/culture': typeof CultureRoute
+  '/dana-holi': typeof DanaHoliRoute
+  '/golju-devta': typeof GoljuDevtaRoute
+  '/holi-traditions': typeof HoliTraditionsRoute
+  '/homestays': typeof HomestaysRoute
+  '/nanda-devi-raj-jat': typeof NandaDeviRajJatRoute
+  '/villages': typeof VillagesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aipan-art': typeof AipanArtRoute
+  '/culture': typeof CultureRoute
+  '/dana-holi': typeof DanaHoliRoute
+  '/golju-devta': typeof GoljuDevtaRoute
+  '/holi-traditions': typeof HoliTraditionsRoute
+  '/homestays': typeof HomestaysRoute
+  '/nanda-devi-raj-jat': typeof NandaDeviRajJatRoute
+  '/villages': typeof VillagesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aipan-art': typeof AipanArtRoute
+  '/culture': typeof CultureRoute
+  '/dana-holi': typeof DanaHoliRoute
+  '/golju-devta': typeof GoljuDevtaRoute
+  '/holi-traditions': typeof HoliTraditionsRoute
+  '/homestays': typeof HomestaysRoute
+  '/nanda-devi-raj-jat': typeof NandaDeviRajJatRoute
+  '/villages': typeof VillagesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/aipan-art'
+    | '/culture'
+    | '/dana-holi'
+    | '/golju-devta'
+    | '/holi-traditions'
+    | '/homestays'
+    | '/nanda-devi-raj-jat'
+    | '/villages'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/aipan-art'
+    | '/culture'
+    | '/dana-holi'
+    | '/golju-devta'
+    | '/holi-traditions'
+    | '/homestays'
+    | '/nanda-devi-raj-jat'
+    | '/villages'
+  id:
+    | '__root__'
+    | '/'
+    | '/aipan-art'
+    | '/culture'
+    | '/dana-holi'
+    | '/golju-devta'
+    | '/holi-traditions'
+    | '/homestays'
+    | '/nanda-devi-raj-jat'
+    | '/villages'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AipanArtRoute: typeof AipanArtRoute
+  CultureRoute: typeof CultureRoute
+  DanaHoliRoute: typeof DanaHoliRoute
+  GoljuDevtaRoute: typeof GoljuDevtaRoute
+  HoliTraditionsRoute: typeof HoliTraditionsRoute
+  HomestaysRoute: typeof HomestaysRoute
+  NandaDeviRajJatRoute: typeof NandaDeviRajJatRoute
+  VillagesRoute: typeof VillagesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aipan-art': {
+      id: '/aipan-art'
+      path: '/aipan-art'
+      fullPath: '/aipan-art'
+      preLoaderRoute: typeof AipanArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/culture': {
+      id: '/culture'
+      path: '/culture'
+      fullPath: '/culture'
+      preLoaderRoute: typeof CultureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dana-holi': {
+      id: '/dana-holi'
+      path: '/dana-holi'
+      fullPath: '/dana-holi'
+      preLoaderRoute: typeof DanaHoliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/golju-devta': {
+      id: '/golju-devta'
+      path: '/golju-devta'
+      fullPath: '/golju-devta'
+      preLoaderRoute: typeof GoljuDevtaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/holi-traditions': {
+      id: '/holi-traditions'
+      path: '/holi-traditions'
+      fullPath: '/holi-traditions'
+      preLoaderRoute: typeof HoliTraditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/homestays': {
+      id: '/homestays'
+      path: '/homestays'
+      fullPath: '/homestays'
+      preLoaderRoute: typeof HomestaysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nanda-devi-raj-jat': {
+      id: '/nanda-devi-raj-jat'
+      path: '/nanda-devi-raj-jat'
+      fullPath: '/nanda-devi-raj-jat'
+      preLoaderRoute: typeof NandaDeviRajJatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/villages': {
+      id: '/villages'
+      path: '/villages'
+      fullPath: '/villages'
+      preLoaderRoute: typeof VillagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AipanArtRoute: AipanArtRoute,
+  CultureRoute: CultureRoute,
+  DanaHoliRoute: DanaHoliRoute,
+  GoljuDevtaRoute: GoljuDevtaRoute,
+  HoliTraditionsRoute: HoliTraditionsRoute,
+  HomestaysRoute: HomestaysRoute,
+  NandaDeviRajJatRoute: NandaDeviRajJatRoute,
+  VillagesRoute: VillagesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

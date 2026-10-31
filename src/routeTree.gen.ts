@@ -11,13 +11,17 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AipanArtRouteImport } from './routes/aipan-art'
+import { Route as CabRouteImport } from './routes/cab'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CultureRouteImport } from './routes/culture'
 import { Route as DanaHoliRouteImport } from './routes/dana-holi'
 import { Route as GoljuDevtaRouteImport } from './routes/golju-devta'
 import { Route as HoliTraditionsRouteImport } from './routes/holi-traditions'
 import { Route as HomestaysRouteImport } from './routes/homestays'
 import { Route as NandaDeviRajJatRouteImport } from './routes/nanda-devi-raj-jat'
+import { Route as TripPlannerRouteImport } from './routes/trip-planner'
 import { Route as VillagesRouteImport } from './routes/villages'
+import { Route as WorkationRouteImport } from './routes/workation'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -27,6 +31,16 @@ const IndexRoute = IndexRouteImport.update({
 const AipanArtRoute = AipanArtRouteImport.update({
   id: '/aipan-art',
   path: '/aipan-art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CabRoute = CabRouteImport.update({
+  id: '/cab',
+  path: '/cab',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CultureRoute = CultureRouteImport.update({
@@ -59,92 +73,130 @@ const NandaDeviRajJatRoute = NandaDeviRajJatRouteImport.update({
   path: '/nanda-devi-raj-jat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TripPlannerRoute = TripPlannerRouteImport.update({
+  id: '/trip-planner',
+  path: '/trip-planner',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VillagesRoute = VillagesRouteImport.update({
   id: '/villages',
   path: '/villages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkationRoute = WorkationRouteImport.update({
+  id: '/workation',
+  path: '/workation',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aipan-art': typeof AipanArtRoute
+  '/cab': typeof CabRoute
+  '/contact': typeof ContactRoute
   '/culture': typeof CultureRoute
   '/dana-holi': typeof DanaHoliRoute
   '/golju-devta': typeof GoljuDevtaRoute
   '/holi-traditions': typeof HoliTraditionsRoute
   '/homestays': typeof HomestaysRoute
   '/nanda-devi-raj-jat': typeof NandaDeviRajJatRoute
+  '/trip-planner': typeof TripPlannerRoute
   '/villages': typeof VillagesRoute
+  '/workation': typeof WorkationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aipan-art': typeof AipanArtRoute
+  '/cab': typeof CabRoute
+  '/contact': typeof ContactRoute
   '/culture': typeof CultureRoute
   '/dana-holi': typeof DanaHoliRoute
   '/golju-devta': typeof GoljuDevtaRoute
   '/holi-traditions': typeof HoliTraditionsRoute
   '/homestays': typeof HomestaysRoute
   '/nanda-devi-raj-jat': typeof NandaDeviRajJatRoute
+  '/trip-planner': typeof TripPlannerRoute
   '/villages': typeof VillagesRoute
+  '/workation': typeof WorkationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/aipan-art': typeof AipanArtRoute
+  '/cab': typeof CabRoute
+  '/contact': typeof ContactRoute
   '/culture': typeof CultureRoute
   '/dana-holi': typeof DanaHoliRoute
   '/golju-devta': typeof GoljuDevtaRoute
   '/holi-traditions': typeof HoliTraditionsRoute
   '/homestays': typeof HomestaysRoute
   '/nanda-devi-raj-jat': typeof NandaDeviRajJatRoute
+  '/trip-planner': typeof TripPlannerRoute
   '/villages': typeof VillagesRoute
+  '/workation': typeof WorkationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/aipan-art'
+    | '/cab'
+    | '/contact'
     | '/culture'
     | '/dana-holi'
     | '/golju-devta'
     | '/holi-traditions'
     | '/homestays'
     | '/nanda-devi-raj-jat'
+    | '/trip-planner'
     | '/villages'
+    | '/workation'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/aipan-art'
+    | '/cab'
+    | '/contact'
     | '/culture'
     | '/dana-holi'
     | '/golju-devta'
     | '/holi-traditions'
     | '/homestays'
     | '/nanda-devi-raj-jat'
+    | '/trip-planner'
     | '/villages'
+    | '/workation'
   id:
     | '__root__'
     | '/'
     | '/aipan-art'
+    | '/cab'
+    | '/contact'
     | '/culture'
     | '/dana-holi'
     | '/golju-devta'
     | '/holi-traditions'
     | '/homestays'
     | '/nanda-devi-raj-jat'
+    | '/trip-planner'
     | '/villages'
+    | '/workation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AipanArtRoute: typeof AipanArtRoute
+  CabRoute: typeof CabRoute
+  ContactRoute: typeof ContactRoute
   CultureRoute: typeof CultureRoute
   DanaHoliRoute: typeof DanaHoliRoute
   GoljuDevtaRoute: typeof GoljuDevtaRoute
   HoliTraditionsRoute: typeof HoliTraditionsRoute
   HomestaysRoute: typeof HomestaysRoute
   NandaDeviRajJatRoute: typeof NandaDeviRajJatRoute
+  TripPlannerRoute: typeof TripPlannerRoute
   VillagesRoute: typeof VillagesRoute
+  WorkationRoute: typeof WorkationRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -161,6 +213,20 @@ declare module '@tanstack/react-router' {
       path: '/aipan-art'
       fullPath: '/aipan-art'
       preLoaderRoute: typeof AipanArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cab': {
+      id: '/cab'
+      path: '/cab'
+      fullPath: '/cab'
+      preLoaderRoute: typeof CabRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/culture': {
@@ -205,11 +271,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NandaDeviRajJatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trip-planner': {
+      id: '/trip-planner'
+      path: '/trip-planner'
+      fullPath: '/trip-planner'
+      preLoaderRoute: typeof TripPlannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/villages': {
       id: '/villages'
       path: '/villages'
       fullPath: '/villages'
       preLoaderRoute: typeof VillagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/workation': {
+      id: '/workation'
+      path: '/workation'
+      fullPath: '/workation'
+      preLoaderRoute: typeof WorkationRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -218,13 +298,17 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AipanArtRoute: AipanArtRoute,
+  CabRoute: CabRoute,
+  ContactRoute: ContactRoute,
   CultureRoute: CultureRoute,
   DanaHoliRoute: DanaHoliRoute,
   GoljuDevtaRoute: GoljuDevtaRoute,
   HoliTraditionsRoute: HoliTraditionsRoute,
   HomestaysRoute: HomestaysRoute,
   NandaDeviRajJatRoute: NandaDeviRajJatRoute,
+  TripPlannerRoute: TripPlannerRoute,
   VillagesRoute: VillagesRoute,
+  WorkationRoute: WorkationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

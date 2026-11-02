@@ -284,6 +284,7 @@ export type Database = {
           days: number
           id: string
           itinerary: Json
+          report: Json | null
           style: string
           title: string
           travellers: number
@@ -296,6 +297,7 @@ export type Database = {
           days: number
           id?: string
           itinerary?: Json
+          report?: Json | null
           style: string
           title: string
           travellers: number
@@ -308,6 +310,7 @@ export type Database = {
           days?: number
           id?: string
           itinerary?: Json
+          report?: Json | null
           style?: string
           title?: string
           travellers?: number

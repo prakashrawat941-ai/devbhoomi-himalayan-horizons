@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import { ArrowRight, CalendarDays, CarFront, CheckCircle2, Clock3, MapPin, Mountain, Phone, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, CarFront, CheckCircle2, Clock3, MapPin, Mountain, Phone, ShieldCheck, Users } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth";

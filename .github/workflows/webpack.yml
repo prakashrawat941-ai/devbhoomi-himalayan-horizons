@@ -1,27 +1,28 @@
-name: Vite production build
+name: NodeJS with Webpack
 
 on:
   push:
-    branches: ["main", "feature/instant-cab"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["main"]
-
-permissions:
-  contents: read
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Use stable npm release
-        run: npm install --global npm@10.8.2
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund --legacy-peer-deps
-      - name: Build production app
-        run: npm run build
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: |
+        npm install
+        npx webpack
